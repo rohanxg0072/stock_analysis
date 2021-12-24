@@ -9,10 +9,7 @@ with open('stocks.csv') as stocks_csv:
     #open file selected stocks will be written to
     with open("selected_stocks.csv", mode = "w") as selected_stocks_CSV:
         stocks_writer = csv.writer(selected_stocks_CSV, delimiter = ",")
-        
-        #write indices
-        stocks_writer.writerow(['Ticker', 'RSI', 'Price', 'All Time High'])
-        
+                
         for row in csv_reader:
 
             stock = yf.Ticker(row["Ticker"])
